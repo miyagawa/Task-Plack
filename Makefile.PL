@@ -18,6 +18,10 @@ feature 'Catalyst engine for PSGI',
     -default => has_module('Catalyst'),
     'Catalyst::Engine::PSGI';
 
+feature 'Squatting PSGI adapter',
+    -default => has_module('Squatting'),
+    'Squatting::On::PSGI';
+
 auto_install;
 auto_set_repository;
 WriteAll;
