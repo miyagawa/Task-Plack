@@ -12,7 +12,8 @@ feature 'Extra Plack servers',
     'Plack::Server::ServerSimple',
     'Plack::Server::AnyEvent',
     'Plack::Server::ReverseHTTP',
-    'Plack::Server::Coro';
+    'Plack::Server::Coro',
+    'Plack::Server::POE';
 
 feature 'Catalyst engine for PSGI',
     -default => has_module('Catalyst'),
