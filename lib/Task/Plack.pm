@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
@@ -19,7 +19,7 @@ sub dependencies {
         ],
         'Extra Plack Servers', sub { 1 }, [
             [ 'Plack::Server::ServerSimple', 'git://github.com/miyagawa/Plack-Server-ServerSimple.git' ],
-            [ 'Plack::Server::AnyEvent', 'git://github.com/miyagawa/Plack-Serevr-AnyEvent.git' ],
+            [ 'Plack::Server::AnyEvent', 'git://github.com/miyagawa/Plack-Server-AnyEvent.git' ],
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],

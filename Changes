@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.07
+        - Fixed typo in AnyEvent
+
 0.06
         - Duh, fixed git_clone 
 
