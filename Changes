@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.04
+        - Added perl -MTask::Plack -e git_clone
+
 0.03
         - Added Coro and POE
 

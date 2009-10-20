@@ -2,7 +2,10 @@ NAME
     Task::Plack - Plack bundle
 
 SYNOPSIS
-      cpan> install Task::Plack;
+      cpan> install Task::Plack
+
+      # clone development git for all of those modules (You'll be prompted)
+      > perl -MTask::Plack -e 'git_clone'
 
 AUTHOR
     Tatsuhiko Miyagawa <miyagawa@bulknews.net>

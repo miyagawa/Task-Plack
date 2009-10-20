@@ -8,27 +8,9 @@ requires 'Plack';
 requires 'Plack::Request';
 requires 'CGI::PSGI';
 
-feature 'Extra Plack servers',
-    'Plack::Server::ServerSimple',
-    'Plack::Server::AnyEvent',
-    'Plack::Server::ReverseHTTP',
-    'Plack::Server::Coro',
-    'Plack::Server::POE';
-
-feature 'Catalyst engine for PSGI',
-    -default => has_module('Catalyst'),
-    'Catalyst::Engine::PSGI';
-
-feature 'Squatting PSGI adapter',
-    -default => has_module('Squatting'),
-    'Squatting::On::PSGI';
+require 'lib/Task/Plack.pm';
+Task::Plack->makefile_pl;
 
 auto_install;
 auto_set_repository;
 WriteAll;
-
-sub has_module {
-    my $file = shift;
-    $file =~ s!::!/!g;
-    scalar grep -e "$_/$file.pm", @INC;
-}
