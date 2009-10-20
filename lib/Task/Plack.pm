@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
@@ -78,10 +78,8 @@ sub makefile_pl {
 }
 
 sub git_clone {
-    my $class = shift;
-
     my @clone;
-    $class->iter_deps(sub {
+    __PACKAGE__->iter_deps(sub {
         my($name, $cond, $deps) = @_;
         my @repos = map { shift @$_ unless $_->[0]; $_ } @$deps;
 
