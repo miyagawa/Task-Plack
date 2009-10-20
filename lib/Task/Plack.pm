@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
@@ -15,7 +15,7 @@ sub dependencies {
             [ 'Plack', 'git://github.com/miyagawa/Plack.git' ],
             [ 'Plack::Request', 'git://github.com/miyagawa/Plack-Request.git' ],
             [ 'CGI::PSGI', 'git://github.com/miyagawa/CGI-PSGI.git' ],
-            [ undef, 'CGI::Emulate::PSGI', 'git://github.com/tokuhirom/p5-cgi-emulate-psgi.git' ],
+            [ 'CGI::Emulate::PSGI', 'git://github.com/tokuhirom/p5-cgi-emulate-psgi.git' ],
         ],
         'Extra Plack Servers', sub { 1 }, [
             [ 'Plack::Server::ServerSimple', 'git://github.com/miyagawa/Plack-Server-ServerSimple.git' ],
