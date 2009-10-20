@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.09
+        - Made dev PSGI servers optional in git_clone
+
 0.08
         - Added CGI::Emulate::PSGI
 
