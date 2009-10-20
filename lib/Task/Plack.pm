@@ -31,7 +31,7 @@ sub dependencies {
             [ undef, 'nginx', 'git://github.com/yappo/nginx-psgi-patchs.git' ],
         ],
         'Catalyst Engine', sub { has_module('Catalyst') }, [
-            [ 'Catalyst:Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
+            [ 'Catalyst::Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
         ],
         'Squatting::On', sub { has_module('Squatting') }, [
             [ 'Squatting::On::PSGI', 'git://github.com/beppu/Squatting-On-PSGI.git' ],
