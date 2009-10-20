@@ -23,6 +23,8 @@ sub dependencies {
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],
+        ],
+        'In-Development PSGI Servers', sub { 0 }, [
             [ undef, 'Plack::Server::Danga::Socket', 'git://github.com/typester/Plack-Server-Danga-Socket.git' ],
             [ undef, 'Plack::Server::FCGI::EV', 'git://github.com/mala/Plack-Server-FCGI-EV.git' ],
             [ undef, 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],
