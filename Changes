@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.10
+        - Moved most Plack's C/XS optional deps here
+
 0.09
         - Made dev PSGI servers optional in git_clone
 
