@@ -42,7 +42,7 @@ sub dependencies {
             [ undef, 'Sledge::PSGI', 'git://github.com/mala/Sledge-PSGI.git' ],
         ],
         'CGI::Application::PSGI', sub { has_module('CGI::Application') }, [
-            [ undef, 'CGI::Application::PSGI', 'git://github.com/miyagawa/CGI-Application-PSGI.git' ],
+            [ undef, 'CGI::Application::PSGI', 'git://github.com/markstos/CGI-Application-PSGI.git' ],
         ],
         'Maypole::PSGI', sub { has_module('Maypole') }, [
             [ undef, 'Maypole::PSGI', 'git://github.com/miyagawa/Maypole-PSGI.git' ],
