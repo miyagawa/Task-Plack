@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.12
+        - Added Plack::Middleware::JSConcat
+
 0.11
         - Added CGI::Application::PSGI
 
