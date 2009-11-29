@@ -34,6 +34,9 @@ sub dependencies {
         ],
         'Middleware Components', sub { 0 }, [
             [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
+            [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
+            [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
+            [ 'Plack::Middleware::Deflater', 'git://github.com/miyagawa/Plack-Middleware-Deflater.git' ],
         ],
         'Catalyst Engine', sub { has_module('Catalyst') }, [
             [ 'Catalyst::Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
