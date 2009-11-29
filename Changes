@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.13
+        - Added Rewrite, MobileDetector and Deflater
+
 0.12
         - Added Middleware::JSConcat
 
