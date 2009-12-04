@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.14
+        - Added CGI::Compile
+
 0.13
         - Added Rewrite, MobileDetector and Deflater
 
