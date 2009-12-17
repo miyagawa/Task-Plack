@@ -2,11 +2,13 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
 our @EXPORT = qw(git_clone);
+
+# Debug, Session, App::Proxy, Header, FirePHP, Test::WWW::Mechanize::PSGI, Server::Starter
 
 sub dependencies {
     return (
@@ -38,6 +40,14 @@ sub dependencies {
             [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
             [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
             [ 'Plack::Middleware::Deflater', 'git://github.com/miyagawa/Plack-Middleware-Deflater.git' ],
+            [ 'Plack::Middleware::Session', 'git://github.com/stevan/plack-middleware-session.git' ],
+            [ 'Plack::Middleware::Debug', 'git://github.com/hanekomu/plack-middleware-debug.git' ],
+            [ 'Plack::Middleware::Header', 'git://github.com/nihen/Plack-Middleware-Header.git' ],
+            [ 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
+            [ undef, 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
+        ],
+        'Tools', sub { 0 }, [
+            [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
         ],
         'Catalyst Engine', sub { has_module('Catalyst') }, [
             [ 'Catalyst::Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
