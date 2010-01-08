@@ -8,8 +8,6 @@ use ExtUtils::MakeMaker;
 use base qw(Exporter);
 our @EXPORT = qw(git_clone);
 
-# Debug, Session, App::Proxy, Header, FirePHP, Test::WWW::Mechanize::PSGI, Server::Starter
-
 sub dependencies {
     return (
         'Core', sub { 1 }, [
@@ -26,6 +24,7 @@ sub dependencies {
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],
+            [ 'Plack::Server::Standalone::Server::Starter', 'git://github.com/kazuho/p5-Plack-Server-Standalone-Prefork-Server-Starter.git' ],
         ],
         'In-Development PSGI Servers', sub { 0 }, [
             [ undef, 'Plack::Server::Danga::Socket', 'git://github.com/typester/Plack-Server-Danga-Socket.git' ],
@@ -43,8 +42,9 @@ sub dependencies {
             [ 'Plack::Middleware::Session', 'git://github.com/stevan/plack-middleware-session.git' ],
             [ 'Plack::Middleware::Debug', 'git://github.com/hanekomu/plack-middleware-debug.git' ],
             [ 'Plack::Middleware::Header', 'git://github.com/nihen/Plack-Middleware-Header.git' ],
-            [ 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
-            [ undef, 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
+            [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
+            [ 'Plack::Middleware::Auth::Digest', 'git://github.com/miyagawa/Plack-Middleware-Auth-Digest.git' ],
+            [ 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
         ],
         'Tools', sub { 0 }, [
             [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
@@ -66,9 +66,6 @@ sub dependencies {
         ],
         'Mason PSGI handler', sub { has_module('HTML::Mason') }, [
             [ undef, 'HTML::Mason::PSGIHandler', 'git://github.com/miyagawa/HTML-Mason-PSGIHandler.git' ],
-        ],
-        'Mojo server', sub { has_module('Mojo') }, [
-            [ undef, 'Mojo::Server::PSGI', 'git://github.com/miyagawa/Mojo-Server-PSGI.git' ],
         ],
     );
 }
