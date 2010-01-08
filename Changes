@@ -1,5 +1,9 @@
 Revision history for Perl extension Task::Plack
 
+0.16
+        - Added Digest and PSSPSS
+        - Now auto-generates the spec file with the latest version from CPAN
+
 0.15
         - Added Header, Session, FirePHP, Debug, Proxy and Test::WWW::Mechanize::PSGI
 

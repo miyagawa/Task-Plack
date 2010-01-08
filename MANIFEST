@@ -15,6 +15,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Task/Plack.pm
 Makefile.PL
+MakefileX.PL
 MANIFEST			This list of files
 META.yml
 README

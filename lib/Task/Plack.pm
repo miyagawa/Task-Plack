@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
@@ -10,7 +10,7 @@ our @EXPORT = qw(git_clone);
 
 sub dependencies {
     return (
-        'Core', sub { 1 }, [
+        'Core', 1, [
             [ 'PSGI',  'git://github.com/miyagawa/psgi-specs.git' ],
             [ 'Plack', 'git://github.com/miyagawa/Plack.git' ],
             [ 'Plack::Request', 'git://github.com/miyagawa/Plack-Request.git' ],
@@ -18,15 +18,15 @@ sub dependencies {
             [ 'CGI::Emulate::PSGI', 'git://github.com/tokuhirom/p5-cgi-emulate-psgi.git' ],
             [ 'CGI::Compile', 'git://github.com/miyagawa/CGI-Compile.git' ],
         ],
-        'Extra Plack Servers', sub { 0 }, [
+        'Extra Plack Servers', 0, [
             [ 'Plack::Server::ServerSimple', 'git://github.com/miyagawa/Plack-Server-ServerSimple.git' ],
             [ 'Plack::Server::AnyEvent', 'git://github.com/miyagawa/Plack-Server-AnyEvent.git' ],
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],
-            [ 'Plack::Server::Standalone::Server::Starter', 'git://github.com/kazuho/p5-Plack-Server-Standalone-Prefork-Server-Starter.git' ],
+            [ 'Plack::Server::Standalone::Prefork::Server::Starter', 'git://github.com/kazuho/p5-Plack-Server-Standalone-Prefork-Server-Starter.git' ],
         ],
-        'In-Development PSGI Servers', sub { 0 }, [
+        'In-Development PSGI Servers', 0, [
             [ undef, 'Plack::Server::Danga::Socket', 'git://github.com/typester/Plack-Server-Danga-Socket.git' ],
             [ undef, 'Plack::Server::FCGI::EV', 'git://github.com/mala/Plack-Server-FCGI-EV.git' ],
             [ undef, 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],
@@ -34,7 +34,7 @@ sub dependencies {
             [ undef, 'evpsgi', 'git://github.com/sekimura/evpsgi.git' ],
             [ undef, 'nginx', 'git://github.com/yappo/nginx-psgi-patchs.git' ],
         ],
-        'Middleware Components', sub { 0 }, [
+        'Middleware Components', 0, [
             [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
             [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
             [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
@@ -46,25 +46,25 @@ sub dependencies {
             [ 'Plack::Middleware::Auth::Digest', 'git://github.com/miyagawa/Plack-Middleware-Auth-Digest.git' ],
             [ 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
         ],
-        'Tools', sub { 0 }, [
+        'Tools', 0, [
             [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
         ],
-        'Catalyst Engine', sub { has_module('Catalyst') }, [
+        'Catalyst Engine', 0, [
             [ 'Catalyst::Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
         ],
-        'Squatting::On', sub { has_module('Squatting') }, [
+        'Squatting::On', 0, [
             [ 'Squatting::On::PSGI', 'git://github.com/beppu/Squatting-On-PSGI.git' ],
         ],
-        'Sledge', sub { has_module('Sledge') }, [
+        'Sledge', 0, [
             [ undef, 'Sledge::PSGI', 'git://github.com/mala/Sledge-PSGI.git' ],
         ],
-        'CGI::Application::PSGI', sub { has_module('CGI::Application') }, [
+        'CGI::Application::PSGI', 0, [
             [ 'CGI::Application::PSGI', 'git://github.com/markstos/CGI-Application-PSGI.git' ],
         ],
-        'Maypole::PSGI', sub { has_module('Maypole') }, [
+        'Maypole::PSGI', 0, [
             [ undef, 'Maypole::PSGI', 'git://github.com/miyagawa/Maypole-PSGI.git' ],
         ],
-        'Mason PSGI handler', sub { has_module('HTML::Mason') }, [
+        'Mason PSGI handler', 0, [
             [ undef, 'HTML::Mason::PSGIHandler', 'git://github.com/miyagawa/HTML-Mason-PSGIHandler.git' ],
         ],
     );
@@ -86,11 +86,25 @@ sub iter_deps {
 
 sub makefile_pl {
     my $class = shift;
+    my $fh = shift;
+
+    require CPAN;
     $class->iter_deps(sub {
         my($name, $cond, $deps) = @_;
         my @modules = grep defined, map $_->[0], @$deps;
-        main::feature $name, -default => $cond->(), @modules;
+        $fh->print("feature '$name', -default => $cond,\n");
+        for my $module (@modules) {
+            $fh->print("  '$module', ", version_for($module), ",\n");
+        }
+        $fh->print(";\n");
     });
+}
+
+sub version_for {
+    my $name = shift;
+
+    my $module = CPAN::Shell->expand(Module => $name) or return;
+    return $module->cpan_version;
 }
 
 sub git_clone {
@@ -104,7 +118,7 @@ sub git_clone {
             print "- $repo->[0] ($repo->[1])\n";
         }
 
-        my $prompt = ExtUtils::MakeMaker::prompt("Want to git clone them? ", $cond->() ? 'y' : 'n');
+        my $prompt = ExtUtils::MakeMaker::prompt("Want to git clone them? ", $cond ? 'y' : 'n');
         if (lc $prompt eq 'y') {
             for my $repo (@repos) {
                 push @clone, $repo->[1];

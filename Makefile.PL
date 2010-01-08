@@ -28,8 +28,14 @@ feature 'Stacktrace with lexical variables',
     -default => 0,
     'Devel::StackTrace::WithLexicals';
 
-require 'lib/Task/Plack.pm';
-Task::Plack->makefile_pl;
+if ($Module::Install::AUTHOR) {
+    require 'lib/Task/Plack.pm';
+    require FileHandle;
+    open my $out, ">", "MakefileX.PL";
+    Task::Plack->makefile_pl($out);
+}
+
+do "MakefileX.PL";
 
 auto_install;
 auto_set_repository;

@@ -1,0 +1,45 @@
+feature 'Core', -default => 1,
+  'PSGI', 1.03,
+  'Plack', 0.9029,
+  'Plack::Request', 0.09,
+  'CGI::PSGI', 0.06,
+  'CGI::Emulate::PSGI', 0.05,
+  'CGI::Compile', 0.07,
+;
+feature 'Extra Plack Servers', -default => 0,
+  'Plack::Server::ServerSimple', 0.03,
+  'Plack::Server::AnyEvent', 0.03,
+  'Plack::Server::Coro', 0.02,
+  'Plack::Server::POE', 0.4,
+  'Plack::Server::ReverseHTTP', 0.02,
+  'Plack::Server::Standalone::Prefork::Server::Starter', 0.03,
+;
+feature 'In-Development PSGI Servers', -default => 0,
+;
+feature 'Middleware Components', -default => 0,
+  'Plack::Middleware::JSConcat', 0.29,
+  'Plack::Middleware::Deflater', 0.02,
+  'Plack::Middleware::Session', 0.03,
+  'Plack::Middleware::Debug', 0.03,
+  'Plack::Middleware::Header', 0.03,
+  'Plack::Middleware::Auth::Digest', ,
+  'Plack::App::Proxy', 0.07,
+;
+feature 'Tools', -default => 0,
+  'Test::WWW::Mechanize::PSGI', 0.35,
+;
+feature 'Catalyst Engine', -default => 0,
+  'Catalyst::Engine::PSGI', 0.07,
+;
+feature 'Squatting::On', -default => 0,
+  'Squatting::On::PSGI', 0.01,
+;
+feature 'Sledge', -default => 0,
+;
+feature 'CGI::Application::PSGI', -default => 0,
+  'CGI::Application::PSGI', 1.00,
+;
+feature 'Maypole::PSGI', -default => 0,
+;
+feature 'Mason PSGI handler', -default => 0,
+;
