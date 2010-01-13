@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.17
+        - Upped versions
+
 0.16
         - Added Digest and PSSPSS
         - Now auto-generates the spec file with the latest version from CPAN
