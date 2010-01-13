@@ -10,7 +10,7 @@ our @EXPORT = qw(git_clone);
 
 sub dependencies {
     return (
-        'Core', 1, [
+        'Core and Essential Tools', 1, [
             [ 'PSGI',  'git://github.com/miyagawa/psgi-specs.git' ],
             [ 'Plack', 'git://github.com/miyagawa/Plack.git' ],
             [ 'Plack::Request', 'git://github.com/miyagawa/Plack-Request.git' ],
@@ -45,6 +45,7 @@ sub dependencies {
             [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
             [ 'Plack::Middleware::Auth::Digest', 'git://github.com/miyagawa/Plack-Middleware-Auth-Digest.git' ],
             [ 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
+            [ 'Plack::Middleware::ReverseProxy', 'git://github.com/lopnor/Plack-Middleware-ReverseProxy.git' ],
         ],
         'Tools', 0, [
             [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
