@@ -19,7 +19,7 @@ sub dependencies {
             [ 'CGI::Compile', 'git://github.com/miyagawa/CGI-Compile.git' ],
         ],
         'Extra Plack Servers', 0, [
-            [ 'Plack::Server::ServerSimple', 'git://github.com/miyagawa/Plack-Server-ServerSimple.git' ],
+            [ 'HTTP::Server::Simple::PSGI', 'git://github.com/miyagawa/HTTP-Server-Simple-PSGI.git' ],
             [ 'Plack::Server::AnyEvent', 'git://github.com/miyagawa/Plack-Server-AnyEvent.git' ],
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
