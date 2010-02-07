@@ -18,15 +18,17 @@ sub dependencies {
             [ 'CGI::Emulate::PSGI', 'git://github.com/tokuhirom/p5-cgi-emulate-psgi.git' ],
             [ 'CGI::Compile', 'git://github.com/miyagawa/CGI-Compile.git' ],
         ],
-        'Extra Plack Servers', 0, [
+        'Extra PSGI Servers and Plack handlers', 0, [
             [ 'HTTP::Server::Simple::PSGI', 'git://github.com/miyagawa/HTTP-Server-Simple-PSGI.git' ],
             [ 'Plack::Server::AnyEvent', 'git://github.com/miyagawa/Plack-Server-AnyEvent.git' ],
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],
-            [ 'Plack::Server::Standalone::Prefork::Server::Starter', 'git://github.com/kazuho/p5-Plack-Server-Standalone-Prefork-Server-Starter.git' ],
         ],
         'In-Development PSGI Servers', 0, [
+            [ undef, 'Plack::Handler::AnyEvent::HTTPD', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-HTTPD.git' ],
+            [ undef, 'Plack::Handler::AnyEvent::SCGI', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-SCGI.git' ],
+            [ undef, 'Plack::Handler::SCGI', 'git://github.com/miyagawa/Plack-Handler-SCGI.git' ],
             [ undef, 'Plack::Server::Danga::Socket', 'git://github.com/typester/Plack-Server-Danga-Socket.git' ],
             [ undef, 'Plack::Server::FCGI::EV', 'git://github.com/mala/Plack-Server-FCGI-EV.git' ],
             [ undef, 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],

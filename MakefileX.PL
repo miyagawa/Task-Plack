@@ -6,13 +6,12 @@ feature 'Core and Essential Tools', -default => 1,
   'CGI::Emulate::PSGI', 0.05,
   'CGI::Compile', 0.08,
 ;
-feature 'Extra Plack Servers', -default => 0,
-  'HTTP::Server::Simple::PSGI', ,
+feature 'Extra PSGI Servers and Plack handlers', -default => 0,
+  'HTTP::Server::Simple::PSGI', 0.11,
   'Plack::Server::AnyEvent', 0.03,
   'Plack::Server::Coro', 0.02,
   'Plack::Server::POE', 0.4,
   'Plack::Server::ReverseHTTP', 0.02,
-  'Plack::Server::Standalone::Prefork::Server::Starter', 0.03,
 ;
 feature 'In-Development PSGI Servers', -default => 0,
 ;
