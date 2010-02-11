@@ -20,8 +20,8 @@ sub dependencies {
         ],
         'Extra PSGI Servers and Plack handlers', 0, [
             [ 'HTTP::Server::Simple::PSGI', 'git://github.com/miyagawa/HTTP-Server-Simple-PSGI.git' ],
-            [ 'HTTP::Server::Starman', 'git://github.com/miyagawa/Starman.git' ],
-            [ 'AnyEvent::Server::PSGI::Twiggy', 'git://github.com/miyagawa/Twiggy.git' ],
+            [ 'Starman', 'git://github.com/miyagawa/Starman.git' ],
+            [ 'Twiggy', 'git://github.com/miyagawa/Twiggy.git' ],
             [ 'Plack::Server::Coro', 'git://github.com/miyagawa/Plack-Server-Coro.git' ],
             [ 'Plack::Server::POE', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Server::ReverseHTTP', 'git://github.com/miyagawa/Plack-Server-ReverseHTTP.git' ],
