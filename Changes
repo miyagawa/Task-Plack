@@ -1,5 +1,11 @@
 Revision history for Perl extension Task::Plack
 
+0.18
+        - Upped versions
+        - Added Starman, Twiggy, File::Sass, Handler::SCGI, Handler::AnyEvent::HTTPD
+        - renamed handlers
+        - Uses cpanminus to extract versions :)
+
 0.17
         - Upped versions
 

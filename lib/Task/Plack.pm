@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
