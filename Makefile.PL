@@ -20,6 +20,7 @@ feature 'Stacktrace with lexical variables',
     'Devel::StackTrace::WithLexicals';
 
 if ($Module::Install::AUTHOR) {
+    warn "regenerating MakefileX.PL\n";
     require 'lib/Task/Plack.pm';
     require FileHandle;
     open my $out, ">", "MakefileX.PL";
