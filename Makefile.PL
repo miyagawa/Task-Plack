@@ -20,14 +20,14 @@ feature 'Stacktrace with lexical variables',
     'Devel::StackTrace::WithLexicals';
 
 if ($ARGV[0] eq '--regen') {
-    warn "regenerating MakefileX.PL\n";
+    warn "regenerating versions.pl\n";
     require 'lib/Task/Plack.pm';
     require FileHandle;
-    open my $out, ">", "MakefileX.PL";
+    open my $out, ">", "versions.pl";
     Task::Plack->makefile_pl($out);
 }
 
-do "MakefileX.PL";
+do "versions.pl";
 
 auto_install;
 auto_set_repository;

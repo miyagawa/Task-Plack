@@ -15,11 +15,11 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Task/Plack.pm
 Makefile.PL
-MakefileX.PL
 MANIFEST			This list of files
 META.yml
 README
 t/00_compile.t
+versions.pl
 xt/perlcritic.t
 xt/pod.t
 xt/podspell.t
