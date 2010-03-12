@@ -19,7 +19,7 @@ feature 'Stacktrace with lexical variables',
     -default => 0,
     'Devel::StackTrace::WithLexicals';
 
-if ($Module::Install::AUTHOR) {
+if ($ARGV[0] eq '--regen') {
     warn "regenerating MakefileX.PL\n";
     require 'lib/Task/Plack.pm';
     require FileHandle;
