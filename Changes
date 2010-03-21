@@ -1,5 +1,9 @@
 Revision history for Perl extension Task::Plack
 
+0.20
+        - Upped versions
+        - Added SCGI
+
 0.19
         - Upped versions
         - Added Corona
