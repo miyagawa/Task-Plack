@@ -25,6 +25,7 @@ sub dependencies {
             [ 'POE::Component::Server::PSGI', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Handler::AnyEvent::ReverseHTTP', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-ReverseHTTP.git' ],
             [ 'Plack::Handler::SCGI', 'git://github.com/miyagawa/Plack-Handler-SCGI.git' ],
+            [ 'Plack::Handler::AnyEvent::SCGI', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-SCGI.git' ],
             [ 'Plack::Handler::AnyEvent::HTTPD', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-HTTPD.git' ],
         ],
         'In-Development PSGI Servers', 0, [

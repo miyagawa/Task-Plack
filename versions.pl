@@ -1,6 +1,6 @@
 feature 'Core and Essential Tools', -default => 1,
   'PSGI', 1.03,
-  'Plack', 0.9916,
+  'Plack', 0.9920,
   'CGI::PSGI', 0.09,
   'CGI::Emulate::PSGI', 0.06,
   'CGI::Compile', 0.11,
@@ -9,10 +9,11 @@ feature 'Extra PSGI Servers and Plack handlers', -default => 0,
   'HTTP::Server::Simple::PSGI', 0.14,
   'Starman', 0.1002,
   'Twiggy', 0.1004,
-  'Corona', 0.1000,
+  'Corona', 0.1003,
   'POE::Component::Server::PSGI', 0.5,
   'Plack::Handler::AnyEvent::ReverseHTTP', 0.04,
   'Plack::Handler::SCGI', 0.01,
+  'Plack::Handler::AnyEvent::SCGI', ,
   'Plack::Handler::AnyEvent::HTTPD', 0.01,
 ;
 feature 'In-Development PSGI Servers', -default => 0,
@@ -32,10 +33,10 @@ feature 'Tools', -default => 0,
   'Test::WWW::Mechanize::PSGI', 0.35,
 ;
 feature 'Catalyst Engine', -default => 0,
-  'Catalyst::Engine::PSGI', 0.07,
+  'Catalyst::Engine::PSGI', 0.08,
 ;
 feature 'Squatting::On', -default => 0,
-  'Squatting::On::PSGI', 0.03,
+  'Squatting::On::PSGI', 0.04,
 ;
 feature 'Sledge', -default => 0,
 ;
