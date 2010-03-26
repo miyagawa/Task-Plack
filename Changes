@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.21
+        - Added Starlet
+
 0.20
         - Upped versions
         - Added SCGI
