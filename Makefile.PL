@@ -13,7 +13,8 @@ feature 'FastCGI daemon and dispatcher',
     -default => 0,
     'FCGI' => 0.67,
     'FCGI::Client' => 0.02,
-    'FCGI::ProcManager';
+    'FCGI::ProcManager' => 0,
+    'Net::FastCGI' => 0.08;
 
 feature 'Stacktrace with lexical variables',
     -default => 0,
