@@ -10,6 +10,15 @@ our @EXPORT = qw(git_clone);
 
 sub dependencies {
     return (
+        'FastCGI daemon and dispatcher', 1, [
+            [ 'FCGI' ],
+            [ 'FCGI::Client' ],
+            [ 'FCGI::ProcManager' ],
+            [ 'Net::FastCGI' ],
+        ],
+        'Stacktrace with lexical variables', 0, [
+            [ 'Devel::StackTrace::WithLexicals' ],
+        ],
         'Core and Essential Tools', 1, [
             [ 'PSGI',  'git://github.com/miyagawa/psgi-specs.git' ],
             [ 'Plack', 'git://github.com/miyagawa/Plack.git' ],
@@ -17,12 +26,14 @@ sub dependencies {
             [ 'CGI::Emulate::PSGI', 'git://github.com/tokuhirom/p5-cgi-emulate-psgi.git' ],
             [ 'CGI::Compile', 'git://github.com/miyagawa/CGI-Compile.git' ],
         ],
-        'Extra PSGI Servers and Plack handlers', 0, [
+        'Recommended PSGI Servers and Plack handlers', 1, [
             [ 'HTTP::Server::Simple::PSGI', 'git://github.com/miyagawa/HTTP-Server-Simple-PSGI.git' ],
             [ 'Starman', 'git://github.com/miyagawa/Starman.git' ],
             [ 'Twiggy', 'git://github.com/miyagawa/Twiggy.git' ],
             [ 'Starlet', 'git://github.com/kazuho/Starlet.git' ],
             [ 'Corona', 'git://github.com/miyagawa/Corona.git' ],
+        ],
+        'Extra PSGI servers and Plack handlers', 0, [
             [ 'POE::Component::Server::PSGI', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Handler::AnyEvent::ReverseHTTP', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-ReverseHTTP.git' ],
             [ 'Plack::Handler::SCGI', 'git://github.com/miyagawa/Plack-Handler-SCGI.git' ],
@@ -38,18 +49,20 @@ sub dependencies {
             [ undef, 'evpsgi', 'git://github.com/sekimura/evpsgi.git' ],
             [ undef, 'nginx', 'git://github.com/yappo/nginx-psgi-patchs.git' ],
         ],
-        'Middleware Components', 0, [
-            [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
-            [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
-            [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
+        'Recommended middleware components', 1, [
             [ 'Plack::Middleware::Deflater', 'git://github.com/miyagawa/Plack-Middleware-Deflater.git' ],
             [ 'Plack::Middleware::Session', 'git://github.com/stevan/plack-middleware-session.git' ],
             [ 'Plack::Middleware::Debug', 'git://github.com/hanekomu/plack-middleware-debug.git' ],
             [ 'Plack::Middleware::Header', 'git://github.com/nihen/Plack-Middleware-Header.git' ],
-            [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
             [ 'Plack::Middleware::Auth::Digest', 'git://github.com/miyagawa/Plack-Middleware-Auth-Digest.git' ],
             [ 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
             [ 'Plack::Middleware::ReverseProxy', 'git://github.com/lopnor/Plack-Middleware-ReverseProxy.git' ],
+        ],
+        'Middleware Components', 0, [
+            [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
+            [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
+            [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
+            [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
             [ 'Plack::Middleware::File::Sass', 'git://github.com/miyagawa/Plack-Middleware-File-Sass.git' ],
             [ undef, 'Plack::Middleware::ForgeryProtection', 'git://github.com/jyotty/Plack-Middleware-ForgeryProtection.git' ],
             [ undef, 'Plack::Middleware::ConsoleLogger', 'git://github.com/miyagawa/Plack-Middleware-ConsoleLogger.git' ],
@@ -123,6 +136,7 @@ sub git_clone {
 
         print "[$name]\n";
         for my $repo (@repos) {
+            next unless $repo->[1];
             print "- $repo->[0] ($repo->[1])\n";
         }
 
