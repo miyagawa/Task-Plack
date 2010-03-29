@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.22
+        - Moved more modules to 'recommended' and install by default
+
 0.21
         - Added Starlet
 
