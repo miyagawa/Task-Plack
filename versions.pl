@@ -9,7 +9,7 @@ feature 'Stacktrace with lexical variables', -default => 0,
 ;
 feature 'Core and Essential Tools', -default => 1,
   'PSGI', 1.03,
-  'Plack', 0.9927,
+  'Plack', 0.9928,
   'CGI::PSGI', 0.09,
   'CGI::Emulate::PSGI', 0.06,
   'CGI::Compile', 0.11,

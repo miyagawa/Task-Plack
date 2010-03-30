@@ -166,7 +166,7 @@ Task::Plack - Plack bundle
 
 =head1 SYNOPSIS
 
-  cpan> install Task::Plack
+  cpanm --interactive Task::Plack
 
   # clone development git for all of those modules (You'll be prompted)
   > perl -MTask::Plack -e 'git_clone'
