@@ -114,7 +114,7 @@ sub makefile_pl {
         my @modules = grep defined, map $_->[0], @$deps;
         $fh->print("feature '$name', -default => $cond,\n");
         for my $module (@modules) {
-            $fh->print("  '$module', ", version_for($module), ",\n");
+            $fh->print("  '$module', '", version_for($module), "',\n");
         }
         $fh->print(";\n");
     });
