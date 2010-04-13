@@ -2,7 +2,7 @@ package Task::Plack;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.22';
+our $VERSION = '0.23';
 use ExtUtils::MakeMaker;
 
 use base qw(Exporter);
@@ -18,6 +18,9 @@ sub dependencies {
         ],
         'Stacktrace with lexical variables', 0, [
             [ 'Devel::StackTrace::WithLexicals' ],
+        ],
+        'Utility to create IO::Handle-ish objects', 1, [
+            [ 'IO::Handle::Util' ],
         ],
         'Core and Essential Tools', 1, [
             [ 'PSGI',  'git://github.com/miyagawa/psgi-specs.git' ],
