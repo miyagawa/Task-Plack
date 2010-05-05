@@ -55,20 +55,20 @@ sub dependencies {
         'Recommended middleware components', 1, [
             [ 'Plack::Middleware::Deflater', 'git://github.com/miyagawa/Plack-Middleware-Deflater.git' ],
             [ 'Plack::Middleware::Session', 'git://github.com/stevan/plack-middleware-session.git' ],
-            [ 'Plack::Middleware::Debug', 'git://github.com/hanekomu/plack-middleware-debug.git' ],
+            [ 'Plack::Middleware::Debug', 'git://github.com/miyagawa/Plack-Middleware-Debug.git' ],
             [ 'Plack::Middleware::Header', 'git://github.com/nihen/Plack-Middleware-Header.git' ],
             [ 'Plack::Middleware::Auth::Digest', 'git://github.com/miyagawa/Plack-Middleware-Auth-Digest.git' ],
             [ 'Plack::App::Proxy', 'git://github.com/leedo/Plack-App-Proxy.git' ],
             [ 'Plack::Middleware::ReverseProxy', 'git://github.com/lopnor/Plack-Middleware-ReverseProxy.git' ],
+            [ 'Plack::Middleware::ConsoleLogger', 'git://github.com/miyagawa/Plack-Middleware-ConsoleLogger.git' ],
         ],
-        'Middleware Components', 0, [
+        'Extra Middleware Components', 0, [
             [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
             [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
             [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
             [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
             [ 'Plack::Middleware::File::Sass', 'git://github.com/miyagawa/Plack-Middleware-File-Sass.git' ],
             [ undef, 'Plack::Middleware::ForgeryProtection', 'git://github.com/jyotty/Plack-Middleware-ForgeryProtection.git' ],
-            [ undef, 'Plack::Middleware::ConsoleLogger', 'git://github.com/miyagawa/Plack-Middleware-ConsoleLogger.git' ],
         ],
         'Tools', 0, [
             [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
