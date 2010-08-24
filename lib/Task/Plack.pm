@@ -42,12 +42,12 @@ sub dependencies {
             [ 'Plack::Handler::SCGI', 'git://github.com/miyagawa/Plack-Handler-SCGI.git' ],
             [ 'Plack::Handler::AnyEvent::SCGI', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-SCGI.git' ],
             [ 'Plack::Handler::AnyEvent::HTTPD', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-HTTPD.git' ],
+            [ 'Plack::Handler::Mongrel2', 'git://github.com/lestrrat/Plack-Handler-Mongrel2.git' ],
+            [ 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],
         ],
         'In-Development PSGI Servers', 0, [
-            [ undef, 'Plack::Handler::AnyEvent::SCGI', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-SCGI.git' ],
             [ undef, 'Plack::Server::Danga::Socket', 'git://github.com/typester/Plack-Server-Danga-Socket.git' ],
             [ undef, 'Plack::Server::FCGI::EV', 'git://github.com/mala/Plack-Server-FCGI-EV.git' ],
-            [ undef, 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],
             [ undef, 'mod_psgi', 'git://github.com/spiritloose/mod_psgi.git' ],
             [ undef, 'evpsgi', 'git://github.com/sekimura/evpsgi.git' ],
             [ undef, 'nginx', 'git://github.com/yappo/nginx-psgi-patchs.git' ],
@@ -64,6 +64,9 @@ sub dependencies {
         ],
         'Extra Middleware Components', 0, [
             [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
+            [ 'Plack::Middleware::Throttle', 'git://github.com/franckcuny/plack--middleware--throttle.git' ],
+            [ 'Plack::Middleware::Status', 'git://github.com/pdonelan/Plack-Middleware-Status.git' ],
+            [ 'Plack::Middleware::AutoRefresh', 'git://github.com/mvgrimes/Plack-Middleware-AutoRefresh.git' ],
             [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
             [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
             [ undef, 'Plack::Middleware::FirePHP', 'git://github.com/fhelmberger/Plack-Middleware-FirePHP.git' ],
@@ -72,6 +75,7 @@ sub dependencies {
         ],
         'Tools', 0, [
             [ 'Test::WWW::Mechanize::PSGI', 'git://github.com/acme/test-www-mechanize-psgi.git' ],
+            [ 'Flea', 'git://github.com/frodwith/flea.git' ],
         ],
         'Catalyst Engine', 0, [
             [ 'Catalyst::Engine::PSGI', 'git://github.com/miyagawa/Catalyst-Engine-PSGI.git' ],
@@ -89,7 +93,7 @@ sub dependencies {
             [ undef, 'Maypole::PSGI', 'git://github.com/miyagawa/Maypole-PSGI.git' ],
         ],
         'Mason PSGI handler', 0, [
-            [ undef, 'HTML::Mason::PSGIHandler', 'git://github.com/miyagawa/HTML-Mason-PSGIHandler.git' ],
+            [ undef, 'HTML::Mason::PSGIHandler', 'git://github.com/rjbs/HTML-Mason-PSGIHandler.git' ],
         ],
     );
 }

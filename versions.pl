@@ -30,6 +30,8 @@ feature 'Extra PSGI servers and Plack handlers', -default => 0,
   'Plack::Handler::SCGI', '0.02',
   'Plack::Handler::AnyEvent::SCGI', '0.02',
   'Plack::Handler::AnyEvent::HTTPD', '0.01',
+  'Plack::Handler::Mongrel2', '',
+  'Perlbal::Plugin::PSGI', '0.03',
 ;
 feature 'In-Development PSGI Servers', -default => 0,
 ;
@@ -45,10 +47,14 @@ feature 'Recommended middleware components', -default => 1,
 ;
 feature 'Extra Middleware Components', -default => 0,
   'Plack::Middleware::JSConcat', '0.29',
+  'Plack::Middleware::Throttle', '0.01',
+  'Plack::Middleware::Status', '1.101150',
+  'Plack::Middleware::AutoRefresh', '0.08',
   'Plack::Middleware::File::Sass', '0.01',
 ;
 feature 'Tools', -default => 0,
   'Test::WWW::Mechanize::PSGI', '0.35',
+  'Flea', '0.02',
 ;
 feature 'Catalyst Engine', -default => 0,
   'Catalyst::Engine::PSGI', '0.11',
