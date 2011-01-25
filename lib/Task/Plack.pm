@@ -17,7 +17,7 @@ sub dependencies {
             [ 'Net::FastCGI' ],
         ],
         'Stacktrace with lexical variables', 0, [
-            [ 'Devel::StackTrace::WithLexicals' ],
+            [ 'Devel::StackTrace::WithLexicals', 0.08 ],
         ],
         'Utility to create IO::Handle-ish objects', 1, [
             [ 'IO::Handle::Util' ],
