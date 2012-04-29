@@ -1,5 +1,8 @@
 Revision history for Perl extension Task::Plack
 
+0.26
+        - Upped versions
+
 0.25
         - Upped versions added new servers and middleware components
 
