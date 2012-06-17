@@ -25,7 +25,6 @@ feature 'Recommended PSGI Servers and Plack handlers', -default => 1,
   'Corona', '0.1004',
 ;
 feature 'Extra PSGI servers and Plack handlers', -default => 0,
-  'POE::Component::Server::PSGI', '0.6',
   'Plack::Handler::AnyEvent::ReverseHTTP', '0.04',
   'Plack::Handler::SCGI', '0.02',
   'Plack::Handler::AnyEvent::SCGI', '0.02',
