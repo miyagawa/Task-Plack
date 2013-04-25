@@ -37,12 +37,10 @@ sub dependencies {
             [ 'Corona', 'git://github.com/miyagawa/Corona.git' ],
         ],
         'Extra PSGI servers and Plack handlers', 0, [
-            [ 'POE::Component::Server::PSGI', 'git://github.com/frodwith/Plack-Server-POE.git' ],
             [ 'Plack::Handler::AnyEvent::ReverseHTTP', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-ReverseHTTP.git' ],
             [ 'Plack::Handler::SCGI', 'git://github.com/miyagawa/Plack-Handler-SCGI.git' ],
             [ 'Plack::Handler::AnyEvent::SCGI', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-SCGI.git' ],
             [ 'Plack::Handler::AnyEvent::HTTPD', 'git://github.com/miyagawa/Plack-Handler-AnyEvent-HTTPD.git' ],
-            [ 'Plack::Handler::Mongrel2', 'git://github.com/lestrrat/Plack-Handler-Mongrel2.git' ],
             [ 'Perlbal::Plugin::PSGI', 'git://github.com/miyagawa/Perlbal-Plugin-PSGI.git' ],
         ],
         'In-Development PSGI Servers', 0, [
@@ -112,18 +110,25 @@ sub iter_deps {
     }
 }
 
-sub makefile_pl {
+sub cpanfile {
     my $class = shift;
     my $fh = shift;
 
     $class->iter_deps(sub {
         my($name, $cond, $deps) = @_;
         my @modules = grep defined, map $_->[0], @$deps;
-        $fh->print("feature '$name', -default => $cond,\n");
-        for my $module (@modules) {
-            $fh->print("  '$module', '", version_for($module), "',\n");
+        if ($cond) {
+            for my $module (@modules) {
+                $fh->print("recommends '$module', '", version_for($module), "',\n");
+            }
+        } else {
+            $fh->print("feature '$name' => sub {\n");
+            for my $module (@modules) {
+                $fh->print("  recommends '$module', '", version_for($module), "',\n");
+            }
+            $fh->print("};\n");
         }
-        $fh->print(";\n");
+        $fh->print("\n");
     });
 }
 
