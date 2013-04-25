@@ -122,7 +122,8 @@ sub cpanfile {
                 $fh->print("recommends '$module', '", version_for($module), "',\n");
             }
         } else {
-            $fh->print("feature '$name' => sub {\n");
+            (my $ident = $name) =~ s/[^A-Za-z_]+/_/g;
+            $fh->print("feature '", lc($ident), "', '$name' => sub {\n");
             for my $module (@modules) {
                 $fh->print("  recommends '$module', '", version_for($module), "',\n");
             }
