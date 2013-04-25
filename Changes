@@ -1,5 +1,10 @@
 Revision history for Perl extension Task::Plack
 
+{{$NEXT}}
+
+0.27  2013-04-25 12:02:27 PDT
+        - Switch to Milla and use optional_features in CPAN Meta spec 2
+
 0.26
         - Upped versions
 
