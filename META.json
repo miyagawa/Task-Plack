@@ -28,7 +28,7 @@
          "description" : "Catalyst Engine",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Catalyst::Engine::PSGI" : "0.13"
                }
             }
@@ -38,7 +38,7 @@
          "description" : "CGI::Application::PSGI",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "CGI::Application::PSGI" : "1.00"
                }
             }
@@ -48,7 +48,7 @@
          "description" : "Extra Middleware Components",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Plack::Middleware::AutoRefresh" : "0.08",
                   "Plack::Middleware::File::Sass" : "0.03",
                   "Plack::Middleware::JSConcat" : "0.29",
@@ -62,7 +62,7 @@
          "description" : "Extra PSGI servers and Plack handlers",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Perlbal::Plugin::PSGI" : "0.03",
                   "Plack::Handler::AnyEvent::HTTPD" : "0.03",
                   "Plack::Handler::AnyEvent::ReverseHTTP" : "0.04",
@@ -92,7 +92,7 @@
          "description" : "Squatting::On",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Squatting::On::PSGI" : "0.06"
                }
             }
@@ -102,7 +102,7 @@
          "description" : "Stacktrace with lexical variables",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Devel::StackTrace::WithLexicals" : "0.10"
                }
             }
@@ -112,7 +112,7 @@
          "description" : "Tools",
          "prereqs" : {
             "runtime" : {
-               "recommends" : {
+               "requires" : {
                   "Flea" : "0.04",
                   "Test::WWW::Mechanize::PSGI" : "0.35"
                }
@@ -123,7 +123,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.018"
+            "Module::Build::Tiny" : "0.019"
          }
       },
       "develop" : {
@@ -132,7 +132,7 @@
          }
       },
       "runtime" : {
-         "recommends" : {
+         "requires" : {
             "CGI::Compile" : "0.16",
             "CGI::Emulate::PSGI" : "0.15",
             "CGI::PSGI" : "0.15",
@@ -171,6 +171,6 @@
          "web" : "https://github.com/miyagawa/Task-Plack"
       }
    },
-   "version" : "0.27"
+   "version" : "0.28"
 }
 
