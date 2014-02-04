@@ -63,7 +63,7 @@ sub dependencies {
         'Extra Middleware Components', 0, [
             [ 'Plack::Middleware::JSConcat', 'git://github.com/clkao/Plack-Middleware-JSConcat.git' ],
             [ 'Plack::Middleware::Throttle', 'git://github.com/franckcuny/plack--middleware--throttle.git' ],
-            [ 'Plack::Middleware::Status', 'git://github.com/pdonelan/Plack-Middleware-Status.git' ],
+            [ 'Plack::Middleware::Status', 'git://github.com/patspam/Plack-Middleware-Status.git' ],
             [ 'Plack::Middleware::AutoRefresh', 'git://github.com/mvgrimes/Plack-Middleware-AutoRefresh.git' ],
             [ undef, 'Plack::Middleware::Rewrite', 'git://github.com/snark/Plack-Middleware-Rewrite.git' ],
             [ undef, 'Plack::Middleware::MobileDetector', 'git://github.com/snark/Plack-Middleware-MobileDetector.git' ],
